@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom";
+
+import { Layout } from './components/layout/Layout';
+import AddVideos from './pages/addVideos';
+import { Videos } from './components/videos/Videos';
+import { DetailPage } from './pages/detail';
 
 function App() {
+
+  let location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Layout page={location.pathname}>
+        <section className="videos">
+            <Switch>
+              <Route exact path="/add-video">
+                <AddVideos />
+              </Route>
+              <Route exact path="/">
+                <Videos/>
+              </Route>
+              <Route path="/detail">
+                <DetailPage />
+              </Route>
+            </Switch>
+        </section>
+      </Layout>
   );
 }
 

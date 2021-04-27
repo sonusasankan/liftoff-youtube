@@ -1,0 +1,134 @@
+@import "./scss/flex.scss";
+
+html{
+  font-size: 16px;
+}
+html, body, h1, h2, h3, h4, h5, h6, p, ul{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button{
+  cursor: pointer;
+}
+header{
+  padding: 15px 50px;
+}
+section{
+  padding: 50px;
+}
+.videos{
+  nav{
+    margin: 24px 0;
+    button:not(:nth-child(2)){
+      margin-right: 20px;
+    }
+  }
+  .video{
+    width: 28%;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    box-shadow: 2px 2px 10px 0px #00000024;
+    padding: 10px;
+
+    iframe{
+      width: 100%;
+    }
+    h2{
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+.add-video-form{
+  form{
+    width: 400px;
+    .form-control{
+      width: 90%;
+      margin-bottom: 20px;
+      input[type="text"]{
+        width: 100%;
+        min-height: 30px;
+        outline: none;
+        border-width: 1px;
+        &:focus{
+          outline: none;
+          box-shadow: none;
+        }
+        &.invalid{
+          color: red;
+          border-color: red;
+        }
+      }
+      textarea{
+        width: 100%;
+        min-height: 60px;
+      }
+    }
+  }
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  padding: 0 15px;
+  background-color: #d4d4d4;
+  &.active{
+    background-color: #b3b3b3;
+  }
+}
+
+ul.tags{
+  margin-top: 10px;
+  li{
+    margin-right: 10px;
+    background-color: #c8deff;
+    color: #000;
+    padding: 3px 20px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    .close-icon{
+      margin-left: 5px; 
+      color: blue;
+      font-weight: bold;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}
+
+.video-actions{
+  margin-top: 20px;
+  .video-toggle{
+    margin-right: 10px;
+  }
+}
+
+.popup-overlay{
+  background-color: #0000005c;
+}
+.popup-content {
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.103);
+}
+
+.detail-page{
+  .title{
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
