@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Header } from '../../components/Header';
 
-type HeaderProps = {
+type Props = {
     children: any,
     page: string,
 }
 
-export const Layout = ( {children, page} : HeaderProps) => {
+export const Layout = ( {children, page} : Props) => {
     return (
         <main>
             <Header page={page}/>

@@ -22,15 +22,15 @@ export const Videos = () => {
       </nav>
       <div className="all-videos d-flex fw-wrap">
         {videos?.length === 0 ?  <h1>There are no videos</h1>:
-          videos?.map(video => {
+          videos?.map((video, index) => {
             return (
-              <div className="video">
+              <div key={index} className="video">
                 <iframe title={video.title} width="300" height="220" src={video.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
                 <h2>{video.title}</h2>
                   <ul className="tags d-flex">
                     {video.tags.map((tag: string, index: any) => {
                       return (
-                        <li>{tag}</li>
+                        <li key={index}>{tag}</li>
                       )
                     })}
                   </ul>
